@@ -107,6 +107,6 @@ L’email est généré dans `No_LangChain.ipynb` et envoyé à une adresse Gmai
 ## 👤 Auteur
 
 Projet développé par Jérôme Frasson  
-GitHub : [Jerome-X1](https://github.com/Jerome-X1)
+GitHub : [Jerome-X1](https://github.com/Jerome-openclassroom)
 
 ---
