@@ -102,6 +102,47 @@ Implemented in `No_LangChain.ipynb`. Sends the bulletin to a Gmail address for t
 
 ---
 
+## 🔊 Local Voice Synthesis (OpenAI Voice)
+
+This project includes an optional step for **vocalizing the weather bulletin** using the `gpt-4o-mini-tts` speech synthesis engine, executed locally with Python.
+
+- 📦 Required module: `openai[voice_helpers]`
+- 🗣️ Voices: customizable (`nova`, `alloy`, `shimmer`, etc.)
+- 🎧 Streaming playback, no file needed
+- ✅ Compatible with real-time generated bulletins
+
+```bash
+pip install openai[voice_helpers]
+```
+
+#### 🔁 Example code (Jupyter version)
+
+```python
+from openai import AsyncOpenAI
+from openai.helpers import LocalAudioPlayer
+
+openai = AsyncOpenAI()
+
+instructions = "Voice: Friendly and informative. Tone: Neutral and clear."
+input = result  # Automatically generated weather bulletin
+
+async def play_weather(text):
+    async with openai.audio.speech.with_streaming_response.create(
+        model="gpt-4o-mini-tts",
+        voice="nova",
+        input=text,
+        instructions=instructions,
+        response_format="pcm",
+    ) as response:
+        await LocalAudioPlayer().play(response)
+
+await play_weather(result)
+```
+
+---
+
+💡 **Note:** This system allows you to create spoken weather bulletins, suitable for podcasts, voice assistants, or dynamic displays in local centers, sporting events, or custom weather apps.
+
 ## 🌍 Future Extensions
 
 - Scheduled automation via `cron`, `task scheduler`, or Make/Zapier
