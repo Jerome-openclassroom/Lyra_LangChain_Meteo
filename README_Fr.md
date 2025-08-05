@@ -1,4 +1,4 @@
-# 🌤️ Lyra_Météo_Observée
+# 🌤️ Lyra_Météo_Observée (LangChain)
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--3.5-blueviolet?logo=openai&logoColor=white)
