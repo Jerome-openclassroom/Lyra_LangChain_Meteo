@@ -90,25 +90,33 @@ Actuellement, il fait 27.2°C à Avignon avec un vent soufflant à 11.9 km/h. Le
 Conseil : Avec un indice UV élevé, il est recommandé de bien se protéger du soleil en utilisant de la crème solaire et en portant un chapeau.
 ```
 
-🔊 Synthèse vocale locale (OpenAI Voice) (optionnel)
-Ce projet inclut une étape facultative de vocalisation du bulletin météo grâce au moteur de synthèse vocale gpt-4o-mini-tts, directement exécuté en local via Python.
 
-📦 Module requis : openai[voice_helpers]
 
-🗣️ Voix : personnalisable (nova, alloy, shimmer, etc.)
+## 📬 Envoi par MailJet (optionnel)
 
-🎧 Lecture en streaming, sans fichier intermédiaire
+L’email est généré dans `No_LangChain.ipynb` et envoyé à une adresse Gmail personnelle pour test.
 
-✅ Compatible avec les bulletins générés en temps réel
+- Fonctionne avec les API MailJet.
+- L’adresse d’expédition doit être validée dans l’interface.
+- L’email peut initialement arriver en SPAM (Gmail) — il suffit de le marquer comme sûr.
 
-bash
-Copier
-Modifier
+---
+## 🔊 Synthèse vocale locale (OpenAI Voice)
+
+Ce projet inclut une étape facultative de **vocalisation du bulletin météo** grâce au moteur de synthèse vocale `gpt-4o-mini-tts`, directement exécuté en local via Python.
+
+- 📦 Module requis : `openai[voice_helpers]`
+- 🗣️ Voix : personnalisable (`nova`, `alloy`, `shimmer`, etc.)
+- 🎧 Lecture en streaming, sans fichier intermédiaire
+- ✅ Compatible avec les bulletins générés en temps réel
+
+```bash
 pip install openai[voice_helpers]
-🔁 Exemple de code (version Jupyter)
-python
-Copier
-Modifier
+```
+
+#### 🔁 Exemple de code (version Jupyter)
+
+```python
 from openai import AsyncOpenAI
 from openai.helpers import LocalAudioPlayer
 
@@ -128,18 +136,11 @@ async def play_weather(text):
         await LocalAudioPlayer().play(response)
 
 await play_weather(result)
-💡 Remarque : Ce système permet la création de bulletins météo parlés, adaptables pour podcast, assistant vocal ou affichage dynamique dans un centre communal, un événement sportif, ou un site météo personnalisé.
----
-
-## 📬 Envoi par MailJet (optionnel)
-
-L’email est généré dans `No_LangChain.ipynb` et envoyé à une adresse Gmail personnelle pour test.
-
-- Fonctionne avec les API MailJet.
-- L’adresse d’expédition doit être validée dans l’interface.
-- L’email peut initialement arriver en SPAM (Gmail) — il suffit de le marquer comme sûr.
+```
 
 ---
+
+💡 **Remarque :** Ce système permet la création de bulletins météo parlés, adaptables pour podcast, assistant vocal ou affichage dynamique dans un centre communal, un événement sportif, ou un site météo personnalisé.
 
 ## 🌍 Portabilité et usage futur
 
