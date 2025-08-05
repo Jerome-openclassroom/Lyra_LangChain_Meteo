@@ -90,6 +90,45 @@ Actuellement, il fait 27.2°C à Avignon avec un vent soufflant à 11.9 km/h. Le
 Conseil : Avec un indice UV élevé, il est recommandé de bien se protéger du soleil en utilisant de la crème solaire et en portant un chapeau.
 ```
 
+🔊 Synthèse vocale locale (OpenAI Voice) (optionnel)
+Ce projet inclut une étape facultative de vocalisation du bulletin météo grâce au moteur de synthèse vocale gpt-4o-mini-tts, directement exécuté en local via Python.
+
+📦 Module requis : openai[voice_helpers]
+
+🗣️ Voix : personnalisable (nova, alloy, shimmer, etc.)
+
+🎧 Lecture en streaming, sans fichier intermédiaire
+
+✅ Compatible avec les bulletins générés en temps réel
+
+bash
+Copier
+Modifier
+pip install openai[voice_helpers]
+🔁 Exemple de code (version Jupyter)
+python
+Copier
+Modifier
+from openai import AsyncOpenAI
+from openai.helpers import LocalAudioPlayer
+
+openai = AsyncOpenAI()
+
+instructions = "Voice: Friendly and informative. Tone: Neutral and clear."
+input = result  # Bulletin météo généré automatiquement
+
+async def play_weather(text):
+    async with openai.audio.speech.with_streaming_response.create(
+        model="gpt-4o-mini-tts",
+        voice="nova",
+        input=text,
+        instructions=instructions,
+        response_format="pcm",
+    ) as response:
+        await LocalAudioPlayer().play(response)
+
+await play_weather(result)
+💡 Remarque : Ce système permet la création de bulletins météo parlés, adaptables pour podcast, assistant vocal ou affichage dynamique dans un centre communal, un événement sportif, ou un site météo personnalisé.
 ---
 
 ## 📬 Envoi par MailJet (optionnel)
