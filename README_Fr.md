@@ -1,5 +1,11 @@
 # 🌤️ Lyra_Météo_Observée
 
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--3.5-blueviolet?logo=openai&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-ChatPromptTemplate-success?logo=github&logoColor=white)
+![MailJet](https://img.shields.io/badge/MailJet-API_Ready-orange?logo=maildotru&logoColor=white)
+
+
 > Génération automatique de bulletins météo localisés à partir d'observations réelles, en Python ou via LangChain.  
 > Ce projet démontre un usage raisonné de l’IA pour transformer des données d’observation météorologique en bulletins lisibles et contextualisés, sans aucune fonction de prévision.
 
