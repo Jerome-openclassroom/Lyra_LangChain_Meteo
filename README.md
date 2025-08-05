@@ -108,6 +108,6 @@ Implemented in `No_LangChain.ipynb`. Sends the bulletin to a Gmail address for t
 ## 👤 Author
 
 Project developed by Jérôme Frasson  
-GitHub: [Jerome-X1](https://github.com/Jerome-X1)
+GitHub: [Jerome-X1](https://github.com/Jerome-openclassroom)
 
 ---
