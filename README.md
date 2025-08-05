@@ -1,5 +1,11 @@
 # 🌤️ Lyra_Observed_Weather
 
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--3.5-blueviolet?logo=openai&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-ChatPromptTemplate-success?logo=github&logoColor=white)
+![MailJet](https://img.shields.io/badge/MailJet-API_Ready-orange?logo=maildotru&logoColor=white)
+
+
 > Automatic generation of localized weather bulletins based on real-time observations, using either pure Python or LangChain.  
 > This project demonstrates a responsible application of AI for generating human-readable and context-aware weather summaries without any forecasting logic.
 
